@@ -1,0 +1,110 @@
+export const GAME_STATUS = {
+  LOBBY: "LOBBY",
+  IN_PROGRESS: "IN_PROGRESS",
+  PAUSED: "PAUSED",
+  COMPLETED: "COMPLETED",
+  CANCELLED: "CANCELLED"
+} as const;
+
+export type GameStatus = (typeof GAME_STATUS)[keyof typeof GAME_STATUS];
+
+export const GAME_PHASES = {
+  LOBBY: "LOBBY",
+  ROLE_REVEAL: "ROLE_REVEAL",
+  NIGHT: "NIGHT",
+  MORNING: "MORNING",
+  DAY_DISCUSSION: "DAY_DISCUSSION",
+  DAY_VOTING: "DAY_VOTING",
+  VOTE_RESULT: "VOTE_RESULT",
+  GAME_OVER: "GAME_OVER"
+} as const;
+
+export type GamePhase = (typeof GAME_PHASES)[keyof typeof GAME_PHASES];
+
+export const TEAMS = {
+  MAFIA: "MAFIA",
+  TOWN: "TOWN"
+} as const;
+
+export type Team = (typeof TEAMS)[keyof typeof TEAMS];
+
+export const ROLES = {
+  MAFIA: "MAFIA",
+  DOCTOR: "DOCTOR",
+  DETECTIVE: "DETECTIVE",
+  VILLAGER: "VILLAGER"
+} as const;
+
+export type RoleKey = (typeof ROLES)[keyof typeof ROLES];
+
+export const ACTION_TYPES = {
+  ELIMINATE: "ELIMINATE",
+  PROTECT: "PROTECT",
+  INVESTIGATE: "INVESTIGATE"
+} as const;
+
+export type ActionType = (typeof ACTION_TYPES)[keyof typeof ACTION_TYPES];
+
+export const ACTION_STATUS = {
+  SUBMITTED: "SUBMITTED",
+  RESOLVED: "RESOLVED",
+  CANCELLED: "CANCELLED"
+} as const;
+
+export type ActionStatus = (typeof ACTION_STATUS)[keyof typeof ACTION_STATUS];
+
+export const VOTE_TYPES = {
+  ELIMINATE: "ELIMINATE",
+  SKIP: "SKIP"
+} as const;
+
+export type VoteType = (typeof VOTE_TYPES)[keyof typeof VOTE_TYPES];
+
+export const TIE_RULES = {
+  RUNOFF: "RUNOFF",
+  NO_ELIMINATION: "NO_ELIMINATION"
+} as const;
+
+export type TieRule = (typeof TIE_RULES)[keyof typeof TIE_RULES];
+
+export const MAFIA_TIE_RULES = {
+  RANDOM: "RANDOM",
+  FIRST_SUBMITTED: "FIRST_SUBMITTED",
+  NO_KILL: "NO_KILL"
+} as const;
+
+export type MafiaTieRule = (typeof MAFIA_TIE_RULES)[keyof typeof MAFIA_TIE_RULES];
+
+export const EVENT_TYPES = {
+  GAME_CREATED: "GAME_CREATED",
+  PLAYER_JOINED: "PLAYER_JOINED",
+  PLAYER_LEFT: "PLAYER_LEFT",
+  PLAYER_REMOVED: "PLAYER_REMOVED",
+  PLAYER_READY_CHANGED: "PLAYER_READY_CHANGED",
+  SETTINGS_UPDATED: "SETTINGS_UPDATED",
+  GAME_STARTED: "GAME_STARTED",
+  ROLE_ASSIGNED: "ROLE_ASSIGNED",
+  PHASE_STARTED: "PHASE_STARTED",
+  NIGHT_ACTION_SUBMITTED: "NIGHT_ACTION_SUBMITTED",
+  NIGHT_RESOLVED: "NIGHT_RESOLVED",
+  PLAYER_ELIMINATED: "PLAYER_ELIMINATED",
+  PLAYER_SAVED: "PLAYER_SAVED",
+  INVESTIGATION_COMPLETED: "INVESTIGATION_COMPLETED",
+  DAY_STARTED: "DAY_STARTED",
+  VOTE_SUBMITTED: "VOTE_SUBMITTED",
+  VOTE_RESOLVED: "VOTE_RESOLVED",
+  RUNOFF_STARTED: "RUNOFF_STARTED",
+  WINNER_DECLARED: "WINNER_DECLARED",
+  GAME_ENDED: "GAME_ENDED",
+  GAME_RESTARTED: "GAME_RESTARTED",
+  GAME_DELETED: "GAME_DELETED"
+} as const;
+
+export type EventType = (typeof EVENT_TYPES)[keyof typeof EVENT_TYPES];
+
+export const INVESTIGATION_RESULTS = {
+  MAFIA: "MAFIA",
+  NOT_MAFIA: "NOT MAFIA"
+} as const;
+
+export type InvestigationResult = (typeof INVESTIGATION_RESULTS)[keyof typeof INVESTIGATION_RESULTS];
